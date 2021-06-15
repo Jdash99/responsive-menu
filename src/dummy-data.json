@@ -1,0 +1,20 @@
+[
+  {
+    "id": "e1",
+    "name": "Avianca",
+    "icon": "envelope",
+    "selected": true
+  },
+  {
+    "id": "e2",
+    "name": "Viva Air",
+    "icon": "cog",
+    "selected": false
+  },
+  {
+    "id": "e3",
+    "name": "Satena",
+    "icon": "store",
+    "selected": false
+  }
+]

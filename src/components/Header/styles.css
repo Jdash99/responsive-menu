@@ -1,0 +1,141 @@
+header {
+  width: 100%;
+  height: 64px;
+  position: relative;
+  z-index: 10;
+  background: #fff;
+  box-shadow: 0 2px 8px #f0f1f2;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* height: 60%; */
+  width: 90%;
+  margin: auto;
+}
+
+header img {
+  width: 70px;
+  margin-right: 0;
+  padding: 8px 0;
+}
+header nav {
+  display: flex;
+}
+
+header nav ul {
+  display: flex;
+}
+
+header nav ul li {
+  list-style: none;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #595959;
+  font-family: 'Roboto', sans-serif;
+  padding: 2rem;
+}
+
+header nav ul li a:hover {
+  color: #1890ff;
+}
+
+@keyframes menu {
+  0% {
+    left: 0px;
+    top: -100px;
+  }
+  100% {
+    left: 0px;
+    top: 0px;
+  }
+}
+
+@media (max-width: 630px) {
+  html {
+    font-size: 70%;
+  }
+}
+
+@media (max-width: 920px) {
+  .menu-section nav {
+    display: none;
+  }
+
+  .one,
+  .two,
+  .three {
+    background-color: gray;
+    height: 2px;
+    width: 100%;
+    margin: 4px auto;
+    transition-duration: 0.3s;
+  }
+  .menu-toggle {
+    width: 18px;
+    height: 12px;
+    margin-right: 20px;
+  }
+
+  .menu-section.on {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #1890ff;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu-section.on nav {
+    display: block;
+  }
+
+  .menu-section.on .menu-toggle {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+  }
+
+  .menu-section.on .menu-toggle .one {
+    transform: rotate(45deg) translate(9px, 0px);
+    background-color: #fff;
+  }
+
+  .menu-section.on .menu-toggle .two {
+    opacity: 0;
+  }
+
+  .menu-section.on .menu-toggle .three {
+    transform: rotate(-45deg) translate(8px, 0px);
+    background-color: #fff;
+  }
+
+  .menu-section.on nav ul {
+    text-align: center;
+    display: block;
+  }
+
+  .menu-section.on nav ul a {
+    transition-duration: 0.5s;
+    font-size: 2rem;
+    display: block;
+    color: #fff;
+    padding: 1.8rem;
+  }
+
+  .menu-section.on nav ul .hide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0rem;
+    font-size: 1.6rem;
+  }
+}

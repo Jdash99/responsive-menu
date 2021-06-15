@@ -1,0 +1,48 @@
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 78px);
+}
+
+.box > div {
+  width: 382px;
+  height: auto;
+  border: 1px solid #d7d7d7;
+  border-radius: 4px;
+  background: white;
+}
+
+.formContainer {
+  padding: 10px 32px 10px 32px;
+}
+
+.welcomeTitle {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  /* padding: 5px; */
+}
+
+.welcomeMessage {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+  padding: 16px;
+  color: #8c8c8c;
+}
+
+@media only screen and (max-width: 600px) {
+  .box > div {
+    width: 300px;
+    height: auto;
+    border: 1px solid #d7d7d7;
+    border-radius: 4px;
+  }
+}
