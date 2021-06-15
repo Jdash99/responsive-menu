@@ -1,11 +1,9 @@
-import { useState } from 'react'
 import classes from './WelcomeForm.module.css'
 import { useForm } from 'react-hook-form'
 import { useToasts } from 'react-toast-notifications'
 import { ErrorMessage } from '@hookform/error-message'
 
 const WelcomeForm = () => {
-  const [value, setValue] = useState()
   const {
     register,
     formState: { errors },
@@ -54,8 +52,19 @@ const WelcomeForm = () => {
               placeholder='Celular'
               {...register('celular', {
                 required: 'Este campo es obligatorio',
-                maxLength: { value: 11, message: 'Celular invalido' },
-                minLength: { value: 8, message: 'Celular invalido' },
+                maxLength: {
+                  value: 10,
+                  message: 'Máximo 10 digitos para el celular',
+                },
+                minLength: {
+                  value: 10,
+                  message: 'Mínimo 10 digitos para el celular',
+                },
+                pattern: {
+                  value: /^[0-9]{10}$/,
+                  message:
+                    'Digite el número celular sin caracteres ni espacios',
+                },
               })}
             />
             <ErrorMessage
@@ -85,7 +94,7 @@ const WelcomeForm = () => {
                 required: 'Este campo es obligatorio',
                 pattern: {
                   value:
-                    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
                   message: 'email invalido',
                 },
               })}
@@ -119,7 +128,7 @@ const WelcomeForm = () => {
                 required: 'Este campo es obligatorio',
                 min: {
                   value: 18,
-                  message: 'La edad debe ser superior o iual a 18',
+                  message: 'La edad debe ser superior o igual a 18',
                 },
                 max: {
                   value: 100,
